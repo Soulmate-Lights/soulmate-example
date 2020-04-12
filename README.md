@@ -2,7 +2,6 @@ Example Soulmate app
 
 Installation:
 ```
-
 sudo easy_install pip
 
 cd ~/esp
