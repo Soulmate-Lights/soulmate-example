@@ -9,7 +9,12 @@ unless port
   exit
 end
 
-if system "IDF_PATH=~/esp/esp-idf PATH=$HOME/esp/xtensa-esp32-elf/bin:$PATH ESPPORT=#{port} make flash"
+require 'etc'
+cores = Etc.nprocessors - 1
+
+puts "Compiling with #{cores} threads."
+
+if system "IDF_PATH=~/esp/esp-idf PATH=$HOME/esp/xtensa-esp32-elf/bin:$PATH ESPPORT=#{port} make -j#{cores} flash"
   puts 'Your Soulmate is now online. Open your app to control it!'
 else
   puts 'Oops - something went wrong!'
