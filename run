@@ -1,0 +1,12 @@
+#! /usr/bin/ruby
+# frozen_string_literal: true
+
+port = Dir.glob('/dev/tty.wchusbserial*')[0]
+
+result = system "ESPPORT=#{port} make flash"
+
+if !result
+  puts 'Your Soulmate is now online. Open your app to control it!'
+else
+  puts 'Oops - something went wrong!'
+end
