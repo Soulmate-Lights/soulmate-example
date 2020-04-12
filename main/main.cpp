@@ -1,15 +1,25 @@
+// Don't forget to change this!
 #define FIRMWARE_NAME "soulmate-example"
-#define N_LEDS 64
+
+// The number of LEDs in each parallel strip
 #define LED_COLS 32
+// The number of parallel strips
 #define LED_ROWS 2
+// Normally LED_COLS * LED_ROWS
+#define N_LEDS 64
+
+// How long should we spend in each pattern?
 #define CYCLE_LENGTH_IN_MS 120000
+
+// How long should the Soulmate fade between patterns?
 #define FADE_DURATION 3000
+
+// Total power in milliamps
 #define SOULMATE_MILLIAMPS 700
-// For debugging, if you want a slightly faster build:
-// #define SKIP_BLUETOOTH true
 
 #include <Soulmate.h>
 
+// Write your pattern functions like this:
 void warm() {
   fill_solid(Soulmate.led_arr, N_LEDS, CRGB::Peru);
 }
@@ -26,6 +36,7 @@ void purple() {
   fill_solid(Soulmate.led_arr, N_LEDS, CRGB::Purple);
 }
 
+// Or more complicated ones like this:
 float rainbowHue = 0;
 void rainbow() {
   rainbowHue += beatsin16Float(2, 0.01, 0.5);
@@ -49,6 +60,7 @@ void rainbow2() {
   }
 }
 
+// Set them all up in your `setup()` function
 void setup() {
   Soulmate.addRoutine("Warm white", warm);
   Soulmate.addRoutine("White", white);
@@ -60,6 +72,7 @@ void setup() {
   Soulmate.setup();
 }
 
+// Leave this the way it is!
 void loop() {
   Soulmate.loop();
 }

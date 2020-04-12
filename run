@@ -3,7 +3,13 @@
 
 port = Dir.glob('/dev/tty.wchusbserial*')[0]
 
-result = system "ESPPORT=#{port} make flash"
+unless port
+  puts 'Oops! Soulmate expects an ESP32 at /dev/tty.wchusbserial*.'
+  puts 'Check the docs for more info.'
+  exit
+end
+
+result = system "IDF_PATH=~/esp/esp-idf PATH=$HOME/esp/xtensa-esp32-elf/bin:$PATH ESPPORT=#{port} make flash"
 
 if !result
   puts 'Your Soulmate is now online. Open your app to control it!'
