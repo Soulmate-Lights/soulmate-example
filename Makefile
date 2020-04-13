@@ -5,4 +5,4 @@ EXTRA_COMPONENT_DIRS += $(HOME)/esp/Soulmate
 EXTRA_COMPONENT_DIRS += $(HOME)/esp/Soulmate/components
 PROJECT_NAME := soulmate-example
 MAKEFLAGS +=
-include $(IDF_PATH)/make/project.mk
+include $(HOME)/esp/esp-idf/make/project.mk
