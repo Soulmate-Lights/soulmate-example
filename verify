@@ -2,17 +2,13 @@
 # frozen_string_literal: true
 
 require 'open3'
+
 require 'etc'
 cores = Etc.nprocessors - 1
-port = Dir.glob('/dev/tty.wchusbserial*').first
-command = "IDF_PATH=~/esp/esp-idf PATH=$HOME/esp/xtensa-esp32-elf/bin:$PATH ESPPORT=#{port} make -j#{cores} flash"
 
-unless port
-  puts "Oops! I couldn't find an ESP32 at /dev/tty.wchusbserial*."
-  exit
-end
+print "Compiling"
 
-print "Compiling and uploading to #{port}"
+command = "IDF_PATH=~/esp/esp-idf PATH=$HOME/esp/xtensa-esp32-elf/bin:$PATH make -j#{cores}"
 
 Open3.popen3(command) do |_stdin, stdout, stderr, thread|
   putc '.' while stdout.gets
@@ -20,7 +16,7 @@ Open3.popen3(command) do |_stdin, stdout, stderr, thread|
   puts
 
   if thread.value == 0
-    puts 'Your Soulmate is now online. Open your app to control it!'
+    puts 'Build succeeded! Use ./run to flash this to your ESP32.'
   else
     puts 'Oops - something went wrong!'
 
