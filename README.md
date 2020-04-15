@@ -28,7 +28,7 @@ Your LEDs should be wired like so:
 - CLOCK -> pin 23 (if using APA102)
 - 5V -> 5V
 
-## 4. Compile and upload (OSX):
+## 4. Compile and upload (OSX only):
 ```
 ./run
 ```
