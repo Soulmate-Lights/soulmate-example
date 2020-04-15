@@ -38,14 +38,26 @@ Your LEDs should be wired like so:
 
 (These pin configurations can be changed with `#define SOULMATE_DATA_PIN` and `#define SOULMATE_CLOCK_PIN`)
 
-## 3. Installation (OSX only):
+## 3. Installation:
+### OSX:
 ```
 ./install
 ```
 
-## 5. Compile and upload (OSX only):
+### Windows: 
+Follow the v3.2 [Windows toolchain instructions](https://docs.espressif.com/projects/esp-idf/en/stable/get-started/windows-setup.html#get-started-windows-tools-installer)
+
+## 4. Compile and upload 
+### OSX:
 ```
 ./run
+```
+
+### Windows:
+Remember to use the Serial port your ESP32 is connected to instead of COM1
+
+```
+ESPPORT=COM1 make flash
 ```
 
 # Writing patterns
