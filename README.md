@@ -1,5 +1,21 @@
 # Soulmate
 
+Soulmate is an easy-to-use wrapper around FastLED. 
+
+Features:
+- Control APA102 or WS2812B LEDs
+- Bluetooth LE and WiFi control
+- OTA firmware updates
+- Blending between patterns
+- Scheduled on/off
+
+# Useful links
+
+[iOS app](https://apps.apple.com/us/app/soulmate-lights/id1330064071)
+[Android app](https://play.google.com/store/apps/details?id=com.lantern&hl=en_US)
+
+# Installing and running
+
 Please note: these instructions are designed for OSX. If you're running windows, please 
 follow the v3.2 [Windows toolchain instructions](https://docs.espressif.com/projects/esp-idf/en/stable/get-started/windows-setup.html#get-started-windows-tools-installer) to get set up. 
 
@@ -27,10 +43,12 @@ Your LEDs should be wired like so:
 ./install
 ```
 
-## 4. Write some patterns:
-Edit `main/main.cpp`.
-
 ## 5. Compile and upload (OSX only):
 ```
 ./run
 ```
+
+# Writing patterns
+
+Patterns are defined in `main/main.cpp` as functions. You can add them to the `setup` function and give them names which will show up in the mobile app.
+
