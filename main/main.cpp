@@ -6,14 +6,20 @@
 #define LED_ROWS 2
 // Normally LED_COLS * LED_ROWS
 #define N_LEDS 64
-// If you're using WS2812B LED strips, uncomment this line
-// #define USE_WS2812B true
+
 // How long should we spend in each pattern?
 #define CYCLE_LENGTH_IN_MS 120000
 // How long should the Soulmate fade between patterns?
 #define FADE_DURATION 3000
 // Total power in milliamps
 #define SOULMATE_MILLIAMPS 700
+
+#define SOULMATE_DATA_PIN 18
+#define SOULMATE_CLOCK_PIN 23
+
+// If you're using WS2812B LED strips, uncomment this line
+// #define USE_WS2812B true
+
 #include <Soulmate.h>
 
 // Write your pattern functions below:
