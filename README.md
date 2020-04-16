@@ -1,6 +1,6 @@
 # Soulmate
 
-Soulmate is an easy-to-use wrapper around FastLED. 
+Soulmate is an easy-to-use wrapper around FastLED.
 
 Features:
 - Control APA102 or WS2812B LEDs
@@ -11,13 +11,13 @@ Features:
 
 # Useful links
 
-[iOS app](https://apps.apple.com/us/app/soulmate-lights/id1330064071)
-[Android app](https://play.google.com/store/apps/details?id=com.lantern&hl=en_US)
+- [iOS app](https://apps.apple.com/us/app/soulmate-lights/id1330064071)
+- [Android app](https://play.google.com/store/apps/details?id=com.lantern&hl=en_US)
 
 # Installing and running
 
-Please note: these instructions are designed for OSX. If you're running windows, please 
-follow the v3.2 [Windows toolchain instructions](https://docs.espressif.com/projects/esp-idf/en/stable/get-started/windows-setup.html#get-started-windows-tools-installer) to get set up. 
+Please note: these instructions are designed for OSX. If you're running windows, please
+follow the v3.2 [Windows toolchain instructions](https://docs.espressif.com/projects/esp-idf/en/stable/get-started/windows-setup.html#get-started-windows-tools-installer) to get set up.
 
 When running commands on a Windows computer, find your ESP port (COM1 for example) and then use `ESPPORT=COM1 make flash` instead of the provided `./run` command inside the MSYS32 prompt. This has not been tested yet - if you're familiar with ESP-IDF please let know.
 
@@ -44,10 +44,10 @@ Your LEDs should be wired like so:
 ./install
 ```
 
-### Windows: 
+### Windows:
 Follow the v3.2 [Windows toolchain instructions](https://docs.espressif.com/projects/esp-idf/en/stable/get-started/windows-setup.html#get-started-windows-tools-installer)
 
-## 4. Compile and upload 
+## 4. Compile and upload
 ### OSX:
 ```
 ./run
