@@ -9,6 +9,7 @@ Features:
 - OTA firmware updates
 - Blending between patterns
 - Scheduled on/off
+- HomeKit support
 
 # Useful links
 
@@ -81,3 +82,7 @@ You can also use `./verify` to compile your project without uploading it!
 # Writing patterns
 
 Patterns are defined in `main/main.cpp` as functions. You can add them to the `setup` function and give them names which will show up in the mobile app.
+
+# HomeKit
+
+To connect your Soulmate to HomeKit, first add your Soulmate to WiFi using the Soulmate app. Then open the Home app on your device, click "Add", then click "I don't have a code or can't scan". Your Soulmate should show up, and you can use the code `111-11-111` to pair it.
