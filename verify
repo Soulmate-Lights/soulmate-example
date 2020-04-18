@@ -6,9 +6,9 @@ require 'open3'
 require 'etc'
 cores = Etc.nprocessors - 1
 
-print "Compiling"
+print "Verify"
 
-command = "IDF_PATH=~/esp/esp-idf PATH=$HOME/esp/xtensa-esp32-elf/bin:$PATH make -j#{cores}"
+command = "IDF_PATH=~/soulmate/esp-idf PATH=$HOME/esp/xtensa-esp32-elf/bin:$PATH make -j#{cores}"
 
 Open3.popen3(command) do |_stdin, stdout, stderr, thread|
   putc '.' while stdout.gets
