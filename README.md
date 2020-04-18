@@ -11,7 +11,7 @@ Features:
 - Scheduled on/off
 - HomeKit support
 
-# Useful links
+# Mobile App
 
 - [iOS app](https://apps.apple.com/us/app/soulmate-lights/id1330064071)
 - [Android app](https://play.google.com/store/apps/details?id=com.lantern&hl=en_US)
