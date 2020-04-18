@@ -19,7 +19,7 @@ puts 'Creating the ESP folder'
 system('mkdir -p ~/soulmate')
 
 puts 'Installing ESP-IDF v3.3'
-system('git clone -b v3.3 --recursive --recurse-submodules https://github.com/espressif/esp-idf.git ~/soulmate/esp-idf')
+system('git clone -j4 -b v3.3 --recursive --recurse-submodules https://github.com/espressif/esp-idf.git ~/soulmate/esp-idf')
 
 puts 'Installing ESP-IDF requirements'
 system('python -m pip install --user -r ~/soulmate/esp-idf/requirements.txt')
@@ -30,7 +30,7 @@ system('tar -xzf ~/soulmate/xtensa-esp32-elf-osx-1.22.0-80-g6c4433a-5.2.0.tar.gz
 system('rm ~/soulmate/xtensa-esp32-elf-osx-1.22.0-80-g6c4433a-5.2.0.tar.gz')
 
 puts 'Installing Soulmate...'
-system('git clone --recursive --recurse-submodules git@github.com:Soulmate-Lights/soulmate-core.git ~/soulmate/soulmate')
+system('git clone -j4 --recursive --recurse-submodules git@github.com:Soulmate-Lights/soulmate-core.git ~/soulmate/soulmate')
 
 puts 'Done!'
 puts 'To compile your Soulmate code, use ./run'
