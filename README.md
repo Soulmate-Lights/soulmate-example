@@ -50,7 +50,7 @@ Your LEDs should be wired like so:
 
 This installs all the required dependencies to `~/soulmate` in your home directory. There's quite a lot to download, so grab a snack.
 
-You'll still need to download the USB drivers for your ESP32, if you haven't already. The Silicon Labs driver is [here](https://www.silabs.com/documents/public/software/Mac_OSX_VCP_Driver.zip), but depending on which ESP32 you use you might need a different one. Open an issue if you get stuck.
+You'll still need to download the USB drivers for your ESP32, if you haven't already. The Silicon Labs driver is [here](https://www.silabs.com/documents/public/software/Mac_OSX_VCP_Driver.zip), but depending on which ESP32 you use you might need a different one [from this list](https://docs.espressif.com/projects/esp-idf/en/latest/esp32/get-started/establish-serial-connection.html).
 
 ### Windows:
 
