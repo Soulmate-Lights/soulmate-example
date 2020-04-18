@@ -1,9 +1,9 @@
 #! /usr/bin/ruby
 # frozen_string_literal: true
 
-if Dir.glob("~/soulmate/esp-idf").any?
+if Dir.glob("#{ENV['HOME']}/soulmate/esp-idf").any?
   puts 'Oops - looks like you already have ESP-IDF installed at ~/soulmate/esp-idf'
-  puts 'Remove this ESP-IDF installation before starting? (y/n)'
+  puts 'Remove this Soulmate installation and reinstall? (y/N)'
   exit unless gets.rstrip == 'y'
 
   system('rm -rf ~/soulmate/esp-idf')
