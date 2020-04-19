@@ -34,4 +34,3 @@ system('git clone --recursive --recurse-submodules git@github.com:Soulmate-Light
 
 puts 'Done!'
 puts 'To compile your Soulmate code, use ./run'
-

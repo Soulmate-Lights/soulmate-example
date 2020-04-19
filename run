@@ -7,10 +7,10 @@ cores = Etc.nprocessors - 1
 
 ports = [
   '/dev/tty.wchusbserial*',
-  '/dev/cu.SLAB_USBtoUART',
+  '/dev/cu.SLAB_USBtoUART'
 ]
 
-port = ports.map{|port| Dir.glob(port)}.flatten.first
+port = ports.map { |port| Dir.glob(port) }.flatten.first
 
 command = "IDF_PATH=~/soulmate/esp-idf PATH=~/soulmate/xtensa-esp32-elf/bin:$PATH ESPPORT=#{port} make -j#{cores} flash"
 
@@ -37,4 +37,3 @@ Open3.popen3(command) do |_stdin, stdout, stderr, thread|
     end
   end
 end
-
