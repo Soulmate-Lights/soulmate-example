@@ -17,7 +17,7 @@ Open3.popen3(command) do |_stdin, stdout, stderr, thread|
 
   puts
 
-  if thread.value.zero?
+  if thread.value == 0
     puts 'Build succeeded! Use ./run to flash this to your ESP32.'
   else
     puts 'Oops - something went wrong!'
