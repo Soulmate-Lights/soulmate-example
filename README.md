@@ -3,6 +3,7 @@
 Soulmate is an easy-to-use wrapper around FastLED.
 
 Features:
+
 - Control APA102 or WS2812B LEDs
 - Bluetooth LE and WiFi control
 - OTA firmware updates
