@@ -11,7 +11,7 @@ Features:
 - Scheduled on/off
 - HomeKit support
 
-This project is still in a very early stage, so if you have any problems please open an [issue](https://github.com/Soulmate-Lights/soulmate-example/issues?q=is%3Aissue+is%3Aopen+sort%3Aupdated-desc) or a [pull request](https://github.com/Soulmate-Lights/soulmate-example/pulls?q=is%3Apr+is%3Aopen+sort%3Aupdated-desc)!
+This project is still in a very early stage, so if you have any problems please open an issue or a pull request! The main codebase for the Soulmate library is [here](https://github.com/Soulmate-Lights/soulmate-core). 
 
 # Mobile App
 
