@@ -34,12 +34,10 @@ cd soulmate-example
 
 ## 2. Set up your ESP32
 
-Your LEDs should be wired like so:
+By default your LEDs should be wired like so:
 
-- Ground -> Ground
-- 5V -> 5V
 - LED DATA -> pin 18
-- LED CLOCK -> pin 23 (if using APA102)
+- LED CLOCK -> pin 23 (if you're using 4-wire LEDs)
 
 (These pin configurations can be changed with `#define SOULMATE_DATA_PIN` and `#define SOULMATE_CLOCK_PIN`)
 
