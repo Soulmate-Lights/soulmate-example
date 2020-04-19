@@ -41,7 +41,7 @@ void purple() {
 
 float rainbowHue = 0;
 void rainbow() {
-  rainbowHue += beatsin16Float(2, 0.01, 0.5);
+  rainbowHue += beatsin16float(2, 0.01, 0.5);
 
   for (int y = 0; y < LED_ROWS; y++) {
     for (int x = 0; x < LED_COLS; x++) {
@@ -52,7 +52,7 @@ void rainbow() {
 }
 
 void rainbow2() {
-  hue += beatsin16Float(2, 0.01, 0.5);
+  hue += beatsin16float(2, 0.01, 0.5);
 
   for (int y = 0; y < LED_ROWS; y++) {
     for (int x = 0; x < LED_COLS; x++) {
