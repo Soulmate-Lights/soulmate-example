@@ -8,8 +8,8 @@ cores = Etc.nprocessors - 1
 
 print 'Compiling your code'
 
-idf_path = '~/soulmate/esp-idf'
-path = '~/soulmate/xtensa-esp32-elf/bin:$PATH'
+idf_path = "#{ENV['HOME']}/soulmate/esp-idf"
+path = "#{ENV['HOME']}/soulmate/xtensa-esp32-elf/bin:$PATH"
 command = "IDF_PATH=#{idf_path} PATH=#{path} make -j#{cores}"
 
 Open3.popen3(command) do |_stdin, stdout, stderr, thread|

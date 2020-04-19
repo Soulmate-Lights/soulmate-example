@@ -12,7 +12,7 @@ ports = [
 
 port = ports.map { |port| Dir.glob(port) }.flatten.first
 
-command = "IDF_PATH=~/soulmate/esp-idf PATH=~/soulmate/xtensa-esp32-elf/bin:$PATH ESPPORT=#{port} make -j#{cores} flash"
+command = "IDF_PATH=#{ENV['HOME']}/soulmate/esp-idf PATH=#{ENV['HOME']}/soulmate/xtensa-esp32-elf/bin:$PATH ESPPORT=#{port} make -j#{cores} flash"
 
 unless port
   puts "Oops! I couldn't find an ESP32!"
@@ -27,7 +27,7 @@ Open3.popen3(command) do |_stdin, stdout, stderr, thread|
 
   puts
 
-  if thread.value == 0
+  if thread.value.zero?
     puts 'Your Soulmate is now online. Open your app to control it!'
   else
     puts 'Oops - something went wrong!'
