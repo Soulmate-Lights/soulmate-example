@@ -4,12 +4,13 @@ Soulmate is an easy-to-use wrapper around FastLED.
 
 Features:
 - Control APA102 or WS2812B LEDs
-
 - Bluetooth LE and WiFi control
 - OTA firmware updates
-- Blending between patterns
+- Smooth blending between patterns
 - Scheduled on/off
 - HomeKit support
+
+This project is still in a very early stage, so if you have any problems please open an [issue](https://github.com/Soulmate-Lights/soulmate-example/issues?q=is%3Aissue+is%3Aopen+sort%3Aupdated-desc) or a [pull request](https://github.com/Soulmate-Lights/soulmate-example/pulls?q=is%3Apr+is%3Aopen+sort%3Aupdated-desc)!
 
 # Mobile App
 
@@ -73,7 +74,7 @@ Remember to use the Serial port your ESP32 is connected to instead of COM1
 ESPPORT=COM1 make flash
 ```
 
-## Troubleshootinbg:
+## Troubleshooting:
 
 If `./run` can't find your ESP32, it may be because it's on a different port. The script looks in a few specific places for it to make life easy for you. Open an issue or a pull request if you find that your ESP32 is on a port that isn't listed!
 
@@ -82,6 +83,28 @@ You can also use `./verify` to compile your project without uploading it!
 # Writing patterns
 
 Patterns are defined in `main/main.cpp` as functions. You can add them to the `setup` function and give them names which will show up in the mobile app.
+
+```
+float rainbowHue = 0;
+void rainbow() {
+  rainbowHue += beatsin16Float(2, 0.01, 0.5);
+
+  for (int y = 0; y < LED_ROWS; y++) {
+    for (int x = 0; x < LED_COLS; x++) {
+      int8_t index = gridIndexHorizontal(x, y);
+      Soulmate.led_arr[index] = CHSV(rainbowHue + x + y * 180, 255, 255);
+    }
+  }
+}
+```
+
+Then, in `void setup()`, name your pattern and add it to the rotation:
+
+```
+Soulmate.addRoutine("Rainbow", rainbow);
+```
+
+Then your pattern will show up in the Soulmate app!
 
 # HomeKit
 
