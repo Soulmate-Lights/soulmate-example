@@ -98,6 +98,8 @@ void rainbow() {
 }
 ```
 
+`Soulmate.leds` is an array of FastLED CRGB objects - you can use any of the [FastLED](https://github.com/FastLED/FastLED/wiki/Basic-usage) functions, as well as some other helpers we've added.
+
 Then, in `void setup()`, name your pattern and add it to the rotation:
 
 ```
