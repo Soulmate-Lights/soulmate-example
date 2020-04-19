@@ -91,7 +91,7 @@ void rainbow() {
 
   for (int y = 0; y < LED_ROWS; y++) {
     for (int x = 0; x < LED_COLS; x++) {
-      int8_t index = gridIndexHorizontal(x, y);
+      int8_t index = gridIndex(x, y);
       Soulmate.led_arr[index] = CHSV(rainbowHue + x + y * 180, 255, 255);
     }
   }
