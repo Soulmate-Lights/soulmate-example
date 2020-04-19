@@ -86,7 +86,7 @@ Patterns are defined in `main/main.cpp` as functions. You can add them to the `s
 ```
 float rainbowHue = 0;
 void rainbow() {
-  rainbowHue += beatsin16Float(2, 0.01, 0.5);
+  rainbowHue += beatsin16float(2, 0.01, 0.5);
 
   for (int y = 0; y < LED_ROWS; y++) {
     for (int x = 0; x < LED_COLS; x++) {
