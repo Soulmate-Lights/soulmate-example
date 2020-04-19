@@ -27,7 +27,7 @@ Open3.popen3(command) do |_stdin, stdout, stderr, thread|
 
   puts
 
-  if thread.value.zero?
+  if thread.value == 0
     puts 'Your Soulmate is now online. Open your app to control it!'
   else
     puts 'Oops - something went wrong!'
