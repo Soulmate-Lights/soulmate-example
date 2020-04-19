@@ -2,12 +2,12 @@
 # frozen_string_literal: true
 
 if Dir.glob("#{ENV['HOME']}/soulmate/esp-idf").any?
-  puts 'Oops - looks like you already have ESP-IDF installed at ~/soulmate/esp-idf'
+  puts "Oops - looks like you already have ESP-IDF installed at #{ENV['HOME']}/soulmate/esp-idf"
   puts 'Remove this Soulmate installation and reinstall? (y/N)'
   exit unless gets.rstrip == 'y'
 
-  system('rm -rf ~/soulmate/esp-idf')
-  system('rm -rf ~/soulmate/soulmate')
+  system("rm -rf #{ENV['HOME']}/soulmate/esp-idf")
+  system("rm -rf #{ENV['HOME']}/soulmate/soulmate")
 end
 
 if Dir.glob('/usr/local/bin/pip').none?
@@ -16,13 +16,13 @@ if Dir.glob('/usr/local/bin/pip').none?
 end
 
 puts 'Creating the ESP folder'
-system('mkdir -p ~/soulmate')
+system("mkdir -p #{ENV['HOME']}/soulmate")
 
 puts 'Installing ESP-IDF v3.3'
-system('git clone -b v3.3 --recursive --recurse-submodules https://github.com/espressif/esp-idf.git ~/soulmate/esp-idf')
+system("git clone -b v3.3 --recursive --recurse-submodules https://github.com/espressif/esp-idf.git #{ENV['HOME']}/soulmate/esp-idf")
 
 puts 'Installing ESP-IDF requirements'
-system('python -m pip install --user -r ~/soulmate/esp-idf/requirements.txt')
+system("python -m pip install --user -r #{ENV['HOME']}/soulmate/esp-idf/requirements.txt")
 
 puts 'Install Xtensa-ESP32-elf'
 system('wget -O ~/soulmate/xtensa-esp32-elf-osx-1.22.0-80-g6c4433a-5.2.0.tar.gz https://dl.espressif.com/dl/xtensa-esp32-elf-osx-1.22.0-80-g6c4433a-5.2.0.tar.gz')
@@ -30,7 +30,7 @@ system('tar -xzf ~/soulmate/xtensa-esp32-elf-osx-1.22.0-80-g6c4433a-5.2.0.tar.gz
 system('rm ~/soulmate/xtensa-esp32-elf-osx-1.22.0-80-g6c4433a-5.2.0.tar.gz')
 
 puts 'Installing Soulmate...'
-system('git clone --recursive --recurse-submodules git@github.com:Soulmate-Lights/soulmate-core.git ~/soulmate/soulmate')
+system("git clone --recursive --recurse-submodules git@github.com:Soulmate-Lights/soulmate-core.git #{ENV['HOME']}/soulmate/soulmate")
 
 puts 'Done!'
 puts 'To compile your Soulmate code, use ./run'

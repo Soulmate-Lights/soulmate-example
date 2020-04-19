@@ -8,14 +8,16 @@ cores = Etc.nprocessors - 1
 
 print 'Compiling your code'
 
-command = "IDF_PATH=~/soulmate/esp-idf PATH=~/soulmate/xtensa-esp32-elf/bin:$PATH make -j#{cores}"
+idf_path = '~/soulmate/esp-idf'
+path = '~/soulmate/xtensa-esp32-elf/bin:$PATH'
+command = "IDF_PATH=#{idf_path} PATH=#{path} make -j#{cores}"
 
 Open3.popen3(command) do |_stdin, stdout, stderr, thread|
   putc '.' while stdout.gets
 
   puts
 
-  if thread.value == 0
+  if thread.value.zero?
     puts 'Build succeeded! Use ./run to flash this to your ESP32.'
   else
     puts 'Oops - something went wrong!'
