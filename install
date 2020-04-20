@@ -30,7 +30,7 @@ system("tar -xzf #{ENV['HOME']}/soulmate/xtensa-esp32-elf-osx-1.22.0-80-g6c4433a
 system("rm #{ENV['HOME']}/soulmate/xtensa-esp32-elf-osx-1.22.0-80-g6c4433a-5.2.0.tar.gz")
 
 puts 'Installing Soulmate...'
-system("git clone --recursive --recurse-submodules git@github.com:Soulmate-Lights/soulmate-core.git #{ENV['HOME']}/soulmate/soulmate")
+system("git clone --recursive --recurse-submodules https://github.com/Soulmate-Lights/soulmate-core.git #{ENV['HOME']}/soulmate/soulmate")
 
 puts 'Done!'
 puts 'To compile your Soulmate code, use ./run'
