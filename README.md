@@ -109,4 +109,8 @@ Then your pattern will show up in the Soulmate app!
 
 # HomeKit
 
-To connect your Soulmate to HomeKit, first add your Soulmate to WiFi using the Soulmate app. Then open the Home app on your device, click "Add", then click "I don't have a code or can't scan". Your Soulmate should show up, and you can use the code `111-11-111` to pair it.
+To connect your Soulmate to HomeKit, first add your Soulmate to WiFi using the Soulmate app. 
+
+Then point your phone's camera at QR code to set it up:
+
+![QR code](https://github.com/Soulmate-Lights/soulmate-core/blob/master/qrcode.png?raw=true)
