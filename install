@@ -25,7 +25,7 @@ puts 'Installing ESP-IDF requirements'
 system("python -m pip install --user -r #{ENV['HOME']}/soulmate/esp-idf/requirements.txt")
 
 puts 'Install Xtensa-ESP32-elf'
-system("wget -O #{ENV['HOME']}/soulmate/xtensa-esp32-elf-osx-1.22.0-80-g6c4433a-5.2.0.tar.gz https://dl.espressif.com/dl/xtensa-esp32-elf-osx-1.22.0-80-g6c4433a-5.2.0.tar.gz")
+system("curl -o #{ENV['HOME']}/soulmate/xtensa-esp32-elf-osx-1.22.0-80-g6c4433a-5.2.0.tar.gz https://dl.espressif.com/dl/xtensa-esp32-elf-osx-1.22.0-80-g6c4433a-5.2.0.tar.gz")
 system("tar -xzf #{ENV['HOME']}/soulmate/xtensa-esp32-elf-osx-1.22.0-80-g6c4433a-5.2.0.tar.gz -C #{ENV['HOME']}/soulmate")
 system("rm #{ENV['HOME']}/soulmate/xtensa-esp32-elf-osx-1.22.0-80-g6c4433a-5.2.0.tar.gz")
 
