@@ -15,7 +15,7 @@ port = ports.map { |p| Dir.glob(p) }.flatten.first
 
 baud = '2000000'
 # Special M5Atom baud rate
-baud = '115200' if port.start_with? '/dev/tty.usbserial-'
+baud = '1500000' if port.start_with? '/dev/tty.usbserial-'
 
 command = "ESPBAUD=#{baud} IDF_PATH=#{ENV['HOME']}/soulmate/esp-idf PATH=#{ENV['HOME']}/soulmate/xtensa-esp32-elf/bin:$PATH ESPPORT=#{port} make -j#{cores} flash"
 
