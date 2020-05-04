@@ -19,7 +19,7 @@ puts 'Creating the ESP folder'
 system("mkdir -p #{ENV['HOME']}/soulmate")
 
 puts 'Installing ESP-IDF v3.3'
-system("git clone -b v3.3 --recursive --recurse-submodules https://github.com/espressif/esp-idf.git #{ENV['HOME']}/soulmate/esp-idf")
+system("git clone -b release/v3.3 --recursive --recurse-submodules https://github.com/espressif/esp-idf.git #{ENV['HOME']}/soulmate/esp-idf")
 
 puts 'Installing ESP-IDF requirements'
 system("python -m pip install --user -r #{ENV['HOME']}/soulmate/esp-idf/requirements.txt")
