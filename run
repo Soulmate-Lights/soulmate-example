@@ -19,6 +19,8 @@ baud = '1500000' if port.start_with? '/dev/tty.usbserial-'
 
 command = "ESPBAUD=#{baud} IDF_PATH=#{ENV['HOME']}/soulmate/esp-idf PATH=#{ENV['HOME']}/soulmate/xtensa-esp32-elf/bin:$PATH ESPPORT=#{port} make -j#{cores} flash"
 
+puts command
+
 unless port
   puts "Oops! I couldn't find an ESP32!"
   puts "Looked for these ports: #{ports.join(', ')}"
