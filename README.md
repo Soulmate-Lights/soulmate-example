@@ -65,6 +65,8 @@ Follow the v3.2 [Windows toolchain instructions](https://docs.espressif.com/proj
 ./run
 ```
 
+Sometimes, `./run` will fail saying "Oops - Something went wrong". Sometimes this just means you have to run it twice!
+
 ### Windows:
 
 Remember to use the Serial port your ESP32 is connected to instead of COM1. You'll also need to edit the EXTRA_COMPONENT_DIRS values in the project's Makefile to match where Soulmate Core is installed.
