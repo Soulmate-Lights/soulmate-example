@@ -11,7 +11,7 @@ Features:
 - Scheduled on/off
 - HomeKit support
 
-This project is still in a very early stage, so if you have any problems please open an issue or a pull request! The main codebase for the Soulmate library is [here](https://github.com/Soulmate-Lights/soulmate-core). 
+This project is still in a very early stage, so if you have any problems please open an issue or a pull request! The main codebase for the Soulmate library is [here](https://github.com/Soulmate-Lights/soulmate-core).
 
 # Mobile App
 
@@ -46,7 +46,11 @@ By default your LEDs should be wired like so:
 ### OSX:
 
 ```
-./install
+rm -rf ~/soulmate
+sudo easy_install pip
+git clone --recursive --recurse-submodules https://github.com/Soulmate-Lights/soulmate-core.git ~/soulmate
+python -m pip install --user -r ~/soulmate/esp-idf/requirements.txt
+ln -s ~/soulmate/bin/soulmate /usr/local/bin/soulmate
 ```
 
 This installs all the required dependencies to `~/soulmate` in your home directory. There's quite a lot to download, so grab a snack.
@@ -62,22 +66,8 @@ Follow the v3.2 [Windows toolchain instructions](https://docs.espressif.com/proj
 ### OSX:
 
 ```
-./run
+soulmate
 ```
-
-### Windows:
-
-Remember to use the Serial port your ESP32 is connected to instead of COM1. You'll also need to edit the EXTRA_COMPONENT_DIRS values in the project's Makefile to match where Soulmate Core is installed.
-
-```
-ESPPORT=COM1 make flash
-```
-
-## Troubleshooting:
-
-If `./run` can't find your ESP32, it may be because it's on a different port. The script looks in a few specific places for it to make life easy for you. Open an issue or a pull request if you find that your ESP32 is on a port that isn't listed!
-
-You can also use `./verify` to compile your project without uploading it!
 
 # Writing patterns
 
@@ -109,7 +99,7 @@ Then your pattern will show up in the Soulmate app!
 
 # HomeKit
 
-To connect your Soulmate to HomeKit, first add your Soulmate to WiFi using the Soulmate app. 
+To connect your Soulmate to HomeKit, first add your Soulmate to WiFi using the Soulmate app.
 
 Then point your phone's camera at QR code to set it up:
 
