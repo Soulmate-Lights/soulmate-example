@@ -69,6 +69,12 @@ Follow the v3.2 [Windows toolchain instructions](https://docs.espressif.com/proj
 soulmate
 ```
 
+Sometimes, the Soulmate command will fail saying "Oops - Something went wrong". Sometimes this just means you have to run it twice!
+
+## Troubleshooting:
+
+If `./run` can't find your ESP32, it may be because it's on a different port. The script looks in a few specific places for it to make life easy for you. Open an issue or a pull request if you find that your ESP32 is on a port that isn't listed!
+
 # Writing patterns
 
 Patterns are defined in `main/main.cpp` as functions. You can add them to the `setup` function and give them names which will show up in the mobile app.
