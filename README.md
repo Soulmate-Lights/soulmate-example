@@ -2,6 +2,10 @@
 
 Soulmate is an easy-to-use wrapper around FastLED.
 
+# Note
+
+This repository describes the "old-fashioned way" of running Soulmate from your command line. Now, you can use the [IDE app](https://editor.soulmatelights.com) to write patterns. Installing the Soulmate command-line tool is only really necessary if you want to work on the core library itself. 
+
 Features:
 
 - Control APA102 or WS2812B LEDs
